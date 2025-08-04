@@ -13,7 +13,7 @@ const arquivos = [
     { nome: "ARQUIVO12.cfg", senha: "senha12", info: "Conteúdo do ARQUIVO 12:\nConfiguração avançada de segurança" }
 ];
 
-let estado = "start"; // start, listar, senha, aberto
+let estado = "start"; // start, Revelar Segredos, senha, aberto
 let arquivoAtual = null;
 let historico = [];
 const cmdBody = document.getElementById('cmd-body');
@@ -93,4 +93,5 @@ function mostrarArquivos() {
 
 window.onload = () => {
     cmdInput.focus();
+
 }

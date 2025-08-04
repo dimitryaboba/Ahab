@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPED - Terminal Restrito</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="terminal-cmd">
+        <div class="cmd-header">
+            Microsoft Windows [Versão 10.0.19045.3570]<br>
+            (c) OPED Corporation. Todos os direitos reservados.<br>
+        </div>
+        <div id="cmd-body" class="cmd-body">
+            <span>C:\OPED\restrito&gt; </span>
+            <span id="cmd-output">Digite <b>listar</b> para ver os arquivos restritos.</span>
+            <div id="cmd-prompt"></div>
+        </div>
+        <input type="text" id="cmd-input" class="cmd-input" autocomplete="off" autofocus placeholder="" onkeydown="handleCmd(event)">
+    </div>
+    <img src="https://cdn.discordapp.com/attachments/885303743598460938/1401060592260743290/image.png?ex=688ee6db&is=688d955b&hm=8568b64fb35722146cacb37e63265b01315da1d699b9042cf3d390e698f7a9fe&" class="marca-oped" alt="Marca OPED">
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,19 +1,19 @@
 const arquivos = [
-    { nome: "Mila castro", senha: "oped2025", info: "Conteúdo do ARQUIVO 1:\nNome: Cleiton Neves\nIdade: 28\nCargo: Analista" },
-    { nome: "Lurizer", senha: "segredo", info: "Conteúdo do ARQUIVO 2:\nDados do projeto OPED\nStatus: CONFIDENCIAL" },
-    { nome: "Nemêsis", senha: "acesso", info: "Conteúdo do ARQUIVO 3:\nMensagem secreta: Você desbloqueou todos os arquivos!" },
-    { nome: "Tupã", senha: "senha4", info: "Conteúdo do ARQUIVO 4:\nBackup realizado em 02/08/2025" },
-    { nome: "andreas", senha: "senha5", info: "Conteúdo do ARQUIVO 5:\nRelatório de desempenho anual" },
-    { nome: "V", senha: "senha6", info: "Conteúdo do ARQUIVO 6:\nConfigurações do sistema OPED" },
-    { nome: "", senha: "senha7", info: "Conteúdo do ARQUIVO 7:\nBiblioteca de funções restritas" },
-    { nome: "ARQUIVO8.json", senha: "senha8", info: "Conteúdo do ARQUIVO 8:\nDados de usuários exportados" },
-    { nome: "ARQUIVO9.xml", senha: "senha9", info: "Conteúdo do ARQUIVO 9:\nEstrutura de permissões do sistema" },
-    { nome: "ARQUIVO10.exe", senha: "senha10", info: "Conteúdo do ARQUIVO 10:\nFerramenta de diagnóstico OPED" },
-    { nome: "ARQUIVO11.tmp", senha: "senha11", info: "Conteúdo do ARQUIVO 11:\nArquivo temporário de logs" },
+    { nome: "Mila castro", senha: "ganância", info: "Conteúdo do ARQUIVO 1:\nNome: Cleiton Neves\nIdade: 28\nCargo: Analista" },
+    { nome: "Lurizer", senha: "Orgulho", info: "Conteúdo do ARQUIVO 2:\nDados do projeto OPED\nStatus: CONFIDENCIAL" },
+    { nome: "Nemêsis", senha: "Ira", info: "Conteúdo do ARQUIVO 3:\nMensagem secreta: Você desbloqueou todos os arquivos!" },
+    { nome: "Tupã", senha: "Preguiça", info: "Conteúdo do ARQUIVO 4:\nBackup realizado em 02/08/2025" },
+    { nome: "andreas", senha: "Lúcifer", info: "Conteúdo do ARQUIVO 5:\nRelatório de desempenho anual" },
+    { nome: "V", senha: "Belzebu", info: "Conteúdo do ARQUIVO 6:\nConfigurações do sistema OPED" },
+    { nome: "adam smasher", senha: "192837", info: "Conteúdo do ARQUIVO 7 Adam Smaher:\na melhor dança de nitght City" },
+    { nome: "Arasaka", senha: "192837", info: "Conteúdo do ARQUIVO 8:\nDados de usuários exportados" },
+    { nome: "Ahab", senha: "pandora", info: "Conteúdo do ARQUIVO 9:\nEstrutura de permissões do sistema" },
+    { nome: "O.P.E.D", senha: "pandora", info: "Conteúdo do ARQUIVO 10:\nFerramenta de diagnóstico OPED" },
+    { nome: "", senha: "senha11", info: "Conteúdo do ARQUIVO 11:\nArquivo temporário de logs" },
     { nome: "ARQUIVO12.cfg", senha: "senha12", info: "Conteúdo do ARQUIVO 12:\nConfiguração avançada de segurança" }
 ];
 
-let estado = "start"; // start, Revelar Segredos, senha, aberto
+let estado = "start"; // start, revelar, senha, aberto
 let arquivoAtual = null;
 let historico = [];
 const cmdBody = document.getElementById('cmd-body');
@@ -43,13 +43,13 @@ function handleCmd(e) {
     printLinha(val, true);
 
     if (estado === "start") {
-        if (val.toLowerCase() === "Revelar Segredos") {
-            estado = "Revelar Segredos";
+        if (val.toLowerCase() === "revelar segredos") {
+            estado = "revelar";
             mostrarArquivos();
         } else {
             printLinha("Comando não reconhecido. Digite <b>Revelar Segredos</b> para ver os arquivos restritos.");
         }
-    } else if (estado === "Revelar Segredos") {
+    } else if (estado === "revelar") {
         const idx = arquivos.findIndex(a => a.nome.toLowerCase() === val.toLowerCase());
         if (idx >= 0) {
             arquivoAtual = idx;
@@ -69,8 +69,8 @@ function handleCmd(e) {
             printLinha("Senha inválida. Tente novamente ou digite <b>Revelar Segredos</b> para voltar.");
         }
     } else if (estado === "aberto") {
-        if (val.toLowerCase() === "Revelar Segredos") {
-            estado = "Revelar Segredos";
+        if (val.toLowerCase() === "revelar segredos") {
+            estado = "revelar";
             mostrarArquivos();
         } else if (val.toLowerCase() === "cls") {
             estado = "start";
@@ -93,5 +93,4 @@ function mostrarArquivos() {
 
 window.onload = () => {
     cmdInput.focus();
-
 }
